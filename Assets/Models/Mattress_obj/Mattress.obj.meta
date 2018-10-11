@@ -1,21 +1,16 @@
 fileFormatVersion: 2
-guid: e9362a3ab5474ef4fbc394152e664f05
+guid: 48e633bfd781fd94fa23d4f52d1712dc
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: LeftEye_1_(17)_0
-    100004: LeftEye_1_(17)_1
-    400000: //RootNode
-    400002: LeftEye_1_(17)_0
-    400004: LeftEye_1_(17)_1
-    2100000: PolybrushMat
-    2300000: LeftEye_1_(17)_0
-    2300002: LeftEye_1_(17)_1
-    3300000: LeftEye_1_(17)_0
-    3300002: LeftEye_1_(17)_1
-    4300000: LeftEye_1_(17)_0
-    4300002: LeftEye_1_(17)_1
+    100000: Mattress
+    100002: //RootNode
+    400000: Mattress
+    400002: //RootNode
+    2100000: Mattress
+    2300000: Mattress
+    3300000: Mattress
+    4300000: Mattress
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -70,8 +65,8 @@ ModelImporter:
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
-    normalSmoothAngle: 0
-    normalImportMode: 1
+    normalSmoothAngle: 60
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
