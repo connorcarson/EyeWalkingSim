@@ -583,6 +583,7 @@
             <e p="GameControlManager.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
+            <e p="PlayerChasedByLight.cs" t="Include" />
             <e p="PlayerInput.cs" t="Include" />
             <e p="PlayerIntetaction.cs" t="Include" />
           </e>
