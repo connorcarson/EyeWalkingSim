@@ -23,6 +23,8 @@ public enum EGameProcess
 {
     PREPARE,
     EyeClosePROCEED,
+    EyeToBoat,
     BoatPROCEED,
+    BoatToEyePuzzel,
     END,
 }
