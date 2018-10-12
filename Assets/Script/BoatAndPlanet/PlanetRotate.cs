@@ -33,7 +33,8 @@ public class PlanetRotate : MonoBehaviour
 
     public void RotatePlanet(float h, float v)
     {
-        rb.AddTorque(-v * velocity, -h * velocity * 2, 0, ForceMode.Impulse);
+        Debug.Log("Move");
+        rb.AddTorque(-v * velocity *2, -h * velocity * 8, 0, ForceMode.Impulse);
         //transform.Rotate(-v * rotateMoveSpeed ,0f ,0f , Space.World);
         //transform.Rotate(0f, -h * rotateTurnSpeed, 0f, Space.World);
     }
