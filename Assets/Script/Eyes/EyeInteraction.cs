@@ -18,7 +18,7 @@ public class EyeInteraction : MonoBehaviour {
     private GameObject eyelidUp;
     private GameObject eyelidDown;
     private bool eyeClosed;
-    private float waitForSeconds = 0;
+    private float waitForSeconds = 1f;
     private bool open = false;
     private bool close = false;
     
@@ -26,25 +26,13 @@ public class EyeInteraction : MonoBehaviour {
     {
         eyelidUp = this.transform.Find("EyelidlUp").gameObject;
         eyelidDown = this.transform.Find("EyelidlDown").gameObject;
-        open = true;
+        //open = true;
     }
 
     void Update()
     {
         //This place can change if the range of the eyelids are changed
-        if (close)
-        {
-            eyelidUp.transform.rotation = Quaternion.Euler(eyelidUp.transform.rotation.eulerAngles.x + (closeAngleSpeed * Time.deltaTime), eyelidUp.transform.rotation.eulerAngles.y, eyelidUp.transform.rotation.eulerAngles.z);
-            eyelidDown.transform.rotation = Quaternion.Euler(eyelidDown.transform.rotation.eulerAngles.x - (closeAngleSpeed * Time.deltaTime), eyelidDown.transform.rotation.eulerAngles.y, eyelidDown.transform.rotation.eulerAngles.z);
-
-            if (eyelidDown.transform.rotation.eulerAngles.x < angleDegLimit)
-            {
-                close = false;
-                waitForSeconds = waitForSeconds + 0.5f;
-                StartCoroutine(EyeOpenCountdownNew(waitForSeconds));
-            }
-        }
-        else if (open)
+        if (open)
         {
             float angle;
             angle = Mathf.Lerp(eyelidDown.transform.rotation.eulerAngles.x, maxOpenAngle, openLerpSpeed);
@@ -56,6 +44,19 @@ public class EyeInteraction : MonoBehaviour {
                 open = false;
             }
         }
+        else if (close)
+        {
+            float angle2;
+            angle2 = Mathf.Lerp(eyelidDown.transform.rotation.eulerAngles.x, 0, closeAngleSpeed);
+            eyelidUp.transform.rotation = Quaternion.Euler(-angle2, eyelidUp.transform.rotation.eulerAngles.y, eyelidUp.transform.rotation.eulerAngles.z);
+            eyelidDown.transform.rotation = Quaternion.Euler(angle2, eyelidDown.transform.rotation.eulerAngles.y, eyelidDown.transform.rotation.eulerAngles.z);
+            if (angle2 % 360 < angleDegLimit)
+            {
+                close = false;
+                //waitForSeconds = waitForSeconds + 0.5f;
+                //StartCoroutine(EyeOpenCountdownNew(waitForSeconds));
+            }
+        }
 
         eyeClosed = eyelidDown.transform.rotation.eulerAngles.x < angleDegLimit ? true : false;
     }
@@ -63,20 +64,18 @@ public class EyeInteraction : MonoBehaviour {
     //Call by player's input
     public void BeenClicked()
     {
-        if (open)
-        {
-            return;
-        }
-        else
-        {
-            close = true;
-        }
+        close = true;
+        open = false;
+        waitForSeconds = waitForSeconds + 0.5f;
+         StartCoroutine(EyeOpenCountdownNew(waitForSeconds));
     }
 
     IEnumerator EyeOpenCountdownNew(float waitSeconds) //Next phase
     {
+        Debug.Log(waitSeconds);
         yield return new WaitForSeconds(waitSeconds);
         open = true;
+        close = false;
     }
 }
 
