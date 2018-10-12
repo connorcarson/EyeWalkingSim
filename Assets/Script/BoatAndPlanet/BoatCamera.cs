@@ -15,7 +15,7 @@ public class BoatCamera : MonoBehaviour {
 	
 	void Update () 
     {
-        if (PlanetBoatLevelManager.Instance.gameProcess == EGameProcess.PROCEED)
+        if (FirstPartLevelManager.Instance.gameProcess == EGameProcess.BoatPROCEED)
         {
             mouseX = Input.GetAxis("Mouse X");
             mouseY = Input.GetAxis("Mouse Y");

@@ -2,13 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlanetBoatLevelManager : MonoBehaviour
+public class FirstPartLevelManager : MonoBehaviour
 {
     public float gameTimer;
     public EGameProcess gameProcess = EGameProcess.PREPARE;
 
-    private static PlanetBoatLevelManager instance;
-    public static PlanetBoatLevelManager Instance
+    private static FirstPartLevelManager instance;
+    public static FirstPartLevelManager Instance
     {
         get
         {
@@ -23,8 +23,8 @@ public class PlanetBoatLevelManager : MonoBehaviour
 
     void Start ()
     {
-        gameProcess = EGameProcess.PROCEED;
-        StartCoroutine(LevelCountDown(gameTimer));
+        gameProcess = EGameProcess.EyeClosePROCEED;
+        //StartCoroutine(LevelCountDown(gameTimer));
     }
 	
     IEnumerator LevelCountDown(float timeCountDown)

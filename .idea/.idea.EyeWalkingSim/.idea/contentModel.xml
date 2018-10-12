@@ -562,7 +562,6 @@
           <e p="BoatAndPlanet" t="Include">
             <e p="BoatCamera.cs" t="Include" />
             <e p="BoatMove.cs" t="Include" />
-            <e p="PlanetBoatLevelManager.cs" t="Include" />
             <e p="PlanetCollision.cs" t="Include" />
             <e p="PlanetRotate.cs" t="Include" />
           </e>
@@ -580,6 +579,7 @@
             <e p="LightGoDownWithEyeClose.cs" t="Include" />
           </e>
           <e p="Generic" t="Include">
+            <e p="FirstPartLevelManager.cs" t="Include" />
             <e p="GameControlManager.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
