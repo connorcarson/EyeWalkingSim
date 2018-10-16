@@ -28,6 +28,10 @@ public class PlayerIntetaction : MonoBehaviour
             case "EyeGame":
                 targetObject.GetComponent<EyeGameUnit>().BeenClicked();
                 break;
+            case "ColorizeObject":
+                Debug.Log("ColorizeObject");
+                targetObject.GetComponent<ColorizeObject>().BeenClicked();
+                break;
             default:
                 break;
         }
