@@ -29,7 +29,7 @@ public class PlayerInput : MonoBehaviour {
 
             if (targetObject)
             {
-                PlayerIntetaction.Instance.LMB_Click(targetObject);
+                PlayerIntetaction.Instance.LMB_Click(targetObject, hit);
             }
         }
 	}

@@ -18,7 +18,7 @@ public class PlayerIntetaction : MonoBehaviour
         instance = this;
     }
     
-    public void LMB_Click(GameObject targetObject)
+    public void LMB_Click(GameObject targetObject, RaycastHit hit)
     {
         switch (targetObject.tag)
         {
@@ -29,8 +29,7 @@ public class PlayerIntetaction : MonoBehaviour
                 targetObject.GetComponent<EyeGameUnit>().BeenClicked();
                 break;
             case "ColorizeObject":
-                Debug.Log("ColorizeObject");
-                targetObject.GetComponent<ColorizeObject>().BeenClicked();
+                targetObject.GetComponent<ColorizeObject>().BeenClicked(targetObject, hit);
                 break;
             default:
                 break;
