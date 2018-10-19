@@ -27,6 +27,8 @@ public class BoatMove : MonoBehaviour
         {
             h = Input.GetAxis("Horizontal") * Time.deltaTime;
             v = Input.GetAxis("Vertical") * Time.deltaTime;
+            Debug.Log(h);
+            Debug.Log(v);
             PlanetRotate.Instance.RotatePlanet(h, v);
         }
     }
