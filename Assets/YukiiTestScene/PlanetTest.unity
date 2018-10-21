@@ -1824,7 +1824,7 @@ MonoBehaviour:
   ClipPlaneOffset: 0.04
   ReflectLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   reflectSky: 1
   heightTexture: {fileID: 8400000, guid: abc874b0868a2404ca7d27599f6cfecd, type: 2}
   timeOffset: 120
