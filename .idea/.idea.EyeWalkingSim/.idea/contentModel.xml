@@ -44,6 +44,9 @@
             <e p="DepthShaderEye.shader" t="Include" />
           </e>
         </e>
+        <e p="Material" t="Include">
+          <e p="HallwayShader.shader" t="Include" />
+        </e>
         <e p="Plugin" t="Include">
           <e p="Cinemachine" t="Include">
             <e p="Base" t="Include">
@@ -882,7 +885,7 @@
             <e p="GameControlManager.cs" t="Include" />
           </e>
           <e p="HallwayRun" t="Include">
-            <e p="ExitDoor.cs" t="Include" />
+            <e p="ExitDoorTrigger.cs" t="Include" />
             <e p="HallwayDoorCloseTrigger.cs" t="Include" />
             <e p="HallwayDoorOpenTrigger.cs" t="Include" />
             <e p="HallwayEnemy.cs" t="Include" />
