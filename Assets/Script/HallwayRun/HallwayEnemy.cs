@@ -14,6 +14,9 @@ public class HallwayEnemy : MonoBehaviour {
     public float distance;
     public float angleBetween;
 
+    private Ray rayForWall;
+    private bool hitWall=false;
+
 	void Start ()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -24,6 +27,21 @@ public class HallwayEnemy : MonoBehaviour {
 	void Update ()
     {
         distance = Vector3.Distance(this.transform.position, player.transform.position);
+        RaycastHit hitInfo;
+        rayForWall = new Ray(this.transform.position, player.transform.position - this.transform.position);
+        if (Physics.Raycast(rayForWall, out hitInfo))
+        {
+            string tag = hitInfo.transform.gameObject.tag;
+            if (tag == "HallwayWalls")
+            {
+                hitWall = true;
+            }else{
+                hitWall = false;
+            }
+        }else{
+            hitWall = false;
+        }
+
         if (isFindPlayer)
         {
             LookAtPlayer();
@@ -68,7 +86,7 @@ public class HallwayEnemy : MonoBehaviour {
 
     void CheckPlayerInRange()
     {
-        if (distance <= detectRatio)
+        if (distance <= detectRatio && hitWall==false)
         {
             float dotResult = Vector3.Dot(this.transform.forward.normalized, (player.transform.position - this.transform.position).normalized);
             angleBetween = Mathf.Acos(dotResult) * Mathf.Rad2Deg;
@@ -77,12 +95,14 @@ public class HallwayEnemy : MonoBehaviour {
                 isFindPlayer = true;
                 playerHallwayRun.enemies.Add(this);
             }
+            
         }
     }
 
     void CheckPlayerOutRange()
     {
-        if (distance > detectRatio)
+        
+        if (distance > detectRatio || hitWall)
         {
             isFindPlayer = false;
             isPlayerBackToSelf = false;

@@ -8,6 +8,8 @@ TagManager:
   - Eye
   - EyeGame
   - ColorizeObject
+  - ChaseLight
+  - HallwayWalls
   layers:
   - Default
   - TransparentFX
