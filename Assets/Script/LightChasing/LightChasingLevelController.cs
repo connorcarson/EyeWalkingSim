@@ -25,6 +25,7 @@ public class LightChasingLevelController : MonoBehaviour {
     {
         if (isProceed && !isFinished)
         {
+            /*
             float ratio = Mathf.Clamp01(Vector3.Distance(player.transform.position, playerStartPoint.position) / startEndDistance);
             chaseLight.transform.position = lightEndPoint.position * ratio + lightStartPoint.position * (1 - ratio);
 
@@ -32,7 +33,8 @@ public class LightChasingLevelController : MonoBehaviour {
             {
                 isFinished = true;
                 GameOver();
-            }
+            }*/
+            LightMoving();
         }
 	}
 
@@ -42,6 +44,11 @@ public class LightChasingLevelController : MonoBehaviour {
         chaseLight = GameObject.FindGameObjectWithTag("ChaseLight");
         startEndDistance = Vector3.Distance(playerStartPoint.position, playerEndPoint.position);
         isProceed = true;
+    }
+
+    void LightMoving()
+    {
+        
     }
 
     void GameOver()

@@ -894,6 +894,7 @@
           <e p="LightChasing" t="Include">
             <e p="LightChasingLevelController.cs" t="Include" />
           </e>
+          <e p="OverShootRotate.cs" t="Include" />
           <e p="Player" t="Include">
             <e p="PlayerChasedByLight.cs" t="Include" />
             <e p="PlayerInput.cs" t="Include" />
