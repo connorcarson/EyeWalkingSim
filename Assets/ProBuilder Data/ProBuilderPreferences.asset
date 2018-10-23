@@ -14,27 +14,43 @@ MonoBehaviour:
   m_Bool_keys:
   - pbObjExportRightHanded
   - pbObjApplyTransform
+  - pbExportAsGroup
   - pbObjExportCopyTextures
   - pbObjExportVertexColors
   - pbObjTextureOffsetScale
   - pbObjQuads
+  - pbStripProBuilderOnBuild
+  - pbDisableAutoUV2Generation
+  - pbForceConvex
+  - pbMeshesAreAssets
+  - pb_SmoothingGroupEditor::m_DrawNormals
+  - pb_SmoothingGroupEditor::m_ShowPreview
   m_Int_keys:
-  - pbDefaultEditLevel
-  - pbHandleAlignment
-  - pbDefaultSelectionMode
+  - pbDefaultCollider
+  - pbDefaultStaticFlags
+  - pbShadowCastingMode
   - pb_GIWorkflowMode
-  - pbDefaultExportFormat
+  - pbDefaultEditLevel
+  - pbDefaultSelectionMode
+  - pbHandleAlignment
+  - pbExtrudeMethod
   m_Float_keys:
   - pbEditorScroll.x
   - pbEditorScroll.y
+  - pb_SmoothingGroupEditor::m_NormalsSize
+  - pbExtrudeDistance
   m_String_keys: []
   m_Color_keys: []
-  m_Material_keys: []
-  m_Bool_values: "\x01\x01\x01\x01"
-  m_Int_values: 0100000000000000020000000100000003000000
+  m_Material_keys:
+  - pbDefaultMaterial
+  m_Bool_values: 01000001010001010000000100
+  m_Int_values: 0200000000000000020000000000000000000000020000000000000001000000
   m_Float_values:
   - 0
-  - 300
+  - 0
+  - 0.001
+  - 0.1
   m_String_values: []
   m_Color_values: []
-  m_Material_values: []
+  m_Material_values:
+  - {fileID: 0}
