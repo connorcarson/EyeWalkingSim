@@ -743,6 +743,9 @@
             <e p="PlanetCollision.cs" t="Include" />
             <e p="PlanetRotate.cs" t="Include" />
           </e>
+          <e p="CheckItemOrUse" t="Include">
+            <e p="CheckItem.cs" t="Include" />
+          </e>
           <e p="EyeGameAndCoridor" t="Include">
             <e p="CorridorDoor.cs" t="Include" />
             <e p="CorridorDoorCloseTrigger.cs" t="Include" />
@@ -758,6 +761,9 @@
               <e p="EyeInteraction.cs" t="Include" />
               <e p="LightGoDownWithEyeClose.cs" t="Include" />
             </e>
+          </e>
+          <e p="FollowQuest" t="Include">
+            <e p="FollowQuest.cs" t="Include" />
           </e>
           <e p="Generic" t="Include">
             <e p="FirstPartLevelManager.cs" t="Include" />
