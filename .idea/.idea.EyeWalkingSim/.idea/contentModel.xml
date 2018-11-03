@@ -510,6 +510,7 @@
                 <e p="Hose.cs" t="Include" />
                 <e p="ParticleSystemMultiplier.cs" t="Include" />
                 <e p="SmokeParticles.cs" t="Include" />
+                <e p="StretchHall.cs" t="Include" />
                 <e p="WaterHoseParticles.cs" t="Include" />
               </e>
               <e p="Shaders" t="Include">
