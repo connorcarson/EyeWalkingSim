@@ -118,4 +118,4 @@ Material:
     - _Movement: {r: 0.01, g: 0, b: 0.009, a: 0.01}
     - _ShallowColor: {r: 1, g: 1, b: 1, a: 1}
     - _ShoreFoamMovement: {r: 0, g: 0, b: 0, a: 0}
-    - _UVOffset: {r: 1.2677281, g: 0, b: 1.1425843, a: 1.2695382}
+    - _UVOffset: {r: 1.2153434, g: 0, b: 1.0932993, a: 1.2147771}
