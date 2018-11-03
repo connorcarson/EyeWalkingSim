@@ -22,6 +22,7 @@ public class GameControlManager : MonoBehaviour {
 public enum EGameProcess
 {
     PREPARE,
+    FollowQuest,
     EyeClosePROCEED,
     EyeToBoat,
     BoatPROCEED,

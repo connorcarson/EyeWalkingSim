@@ -6,9 +6,6 @@ public class FirstPartLevelManager : MonoBehaviour
 {
     public float gameTimer;
     public EGameProcess gameProcess = EGameProcess.PREPARE;
-    public GameObject leftEye;
-    public GameObject rightEye;
-    public AudioSource seaAudio;
 
     private bool leftEyeState;
     private bool rightEyeState;
@@ -29,20 +26,32 @@ public class FirstPartLevelManager : MonoBehaviour
 
     void Start ()
     {
+        //StartCoroutine(PrepareCountDown(gameTimer));
         gameProcess = EGameProcess.EyeClosePROCEED;
         //StartCoroutine(LevelCountDown(gameTimer));
     }
 
     void Update()
     {
-        Debug.Log(gameProcess);
-        leftEyeState = leftEye.GetComponent<EyeInteraction>().eyeClosed;
-        rightEyeState = rightEye.GetComponent<EyeInteraction>().eyeClosed;
-        if (leftEyeState && rightEyeState && gameProcess == EGameProcess.EyeClosePROCEED)
-        {
-            gameProcess = EGameProcess.EyeToBoat;
-            seaAudio.Play();
-        }
+        EyeCloseStateCheck();
+        
+    }
+
+    
+    public GameObject leftEye;
+    public GameObject rightEye;
+    public AudioSource seaAudio;
+    
+    void EyeCloseStateCheck()
+    {
+                Debug.Log(gameProcess);
+                leftEyeState = leftEye.GetComponent<EyeInteraction>().eyeClosed;
+                rightEyeState = rightEye.GetComponent<EyeInteraction>().eyeClosed;
+                if (leftEyeState && rightEyeState && gameProcess == EGameProcess.EyeClosePROCEED)
+                {
+                    gameProcess = EGameProcess.EyeToBoat;
+                    seaAudio.Play();
+                }
     }
 
     IEnumerator LevelCountDown(float timeCountDown)

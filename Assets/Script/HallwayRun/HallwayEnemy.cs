@@ -17,11 +17,14 @@ public class HallwayEnemy : MonoBehaviour {
     private Ray rayForWall;
     private bool hitWall=false;
 
+    public AudioSource footstepAudio;
+    public float audioVolumeChangeSpeed = 0.05f;
 	void Start ()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         playerHallwayRun = player.GetComponent<PlayerHallwayRun>();
-
+        footstepAudio.Play();
+        footstepAudio.volume = 0f;
     }
 	
 	void Update ()
@@ -71,17 +74,21 @@ public class HallwayEnemy : MonoBehaviour {
         if (Vector3.Dot(player.transform.forward, player.transform.position - this.transform.position) > 0)
         {
             isPlayerBackToSelf = true;
+            UpdateFootstepAudio();
         }
         else
         {
             isPlayerBackToSelf = false;
+            MuteFootstepAudio();
         }
     }
 
     void RefreshBehaviour()
     {
         CheckPlayerInRange();
+        UpdateFootstepAudioDown();
         //Add new behaviour if need..
+        
     }
 
     void CheckPlayerInRange()
@@ -108,5 +115,20 @@ public class HallwayEnemy : MonoBehaviour {
             isPlayerBackToSelf = false;
             playerHallwayRun.enemies.Remove(this);
         }
+    }
+    
+    void UpdateFootstepAudio()
+    {
+        footstepAudio.volume = Mathf.Max(footstepAudio.volume +audioVolumeChangeSpeed, 1f);
+    }
+
+    void MuteFootstepAudio()
+    {
+        footstepAudio.volume = 0;
+    }
+    
+    void UpdateFootstepAudioDown()
+    {
+        footstepAudio.volume = Mathf.Min(footstepAudio.volume -audioVolumeChangeSpeed, 0f);
     }
 }

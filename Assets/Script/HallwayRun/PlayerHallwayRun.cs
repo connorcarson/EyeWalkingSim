@@ -10,13 +10,13 @@ public class PlayerHallwayRun : MonoBehaviour
     public float sanValueAddSpeed = 20.0f;
     public float sanValueReduceSpeed = 10.0f;
     public List<HallwayEnemy> enemies = new List<HallwayEnemy>();
-    public AudioSource footstepAudio;
+    //public AudioSource footstepAudio;
     public float waitForSanDown = 5.0f;
     public bool isWaiting = false;
 
     void Start()
     {
-        footstepAudio.Play();
+        //footstepAudio.Play();
     }
 
     void Update ()
@@ -29,11 +29,11 @@ public class PlayerHallwayRun : MonoBehaviour
             {
                 if (enemy.isPlayerBackToSelf)
                 {
-                    UpdateFootstepAudio();
+                    //UpdateFootstepAudio();
                     return;
                 }
             }
-            MuteFootstepAudio();
+            //MuteFootstepAudio();
         }
         else
         {
@@ -50,7 +50,7 @@ public class PlayerHallwayRun : MonoBehaviour
             else
             {
                 reduceSanValue();
-                MuteFootstepAudio();
+                //MuteFootstepAudio();
             }
         }
     }
@@ -67,7 +67,7 @@ public class PlayerHallwayRun : MonoBehaviour
         sanValue = Mathf.Clamp(sanValue, 0, sanValue);
     }
  
-    void UpdateFootstepAudio()
+    /*void UpdateFootstepAudio()
     {
         footstepAudio.volume = sanValue / sanValueMaxium;
     }
@@ -75,7 +75,7 @@ public class PlayerHallwayRun : MonoBehaviour
     void MuteFootstepAudio()
     {
         footstepAudio.volume = 0;
-    }
+    }*/
     
     IEnumerator CountDownBeforeRedueceSan(float waitSeconds) //Next phase
     {
