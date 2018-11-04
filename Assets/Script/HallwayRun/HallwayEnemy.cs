@@ -119,7 +119,7 @@ public class HallwayEnemy : MonoBehaviour {
     
     void UpdateFootstepAudio()
     {
-        footstepAudio.volume = Mathf.Max(footstepAudio.volume +audioVolumeChangeSpeed, 1f);
+        footstepAudio.volume = Mathf.Min(footstepAudio.volume +audioVolumeChangeSpeed * Time.deltaTime, 1f);
     }
 
     void MuteFootstepAudio()
@@ -129,6 +129,6 @@ public class HallwayEnemy : MonoBehaviour {
     
     void UpdateFootstepAudioDown()
     {
-        footstepAudio.volume = Mathf.Min(footstepAudio.volume -audioVolumeChangeSpeed, 0f);
+        footstepAudio.volume = Mathf.Max(footstepAudio.volume -audioVolumeChangeSpeed * Time.deltaTime, 0f);
     }
 }
