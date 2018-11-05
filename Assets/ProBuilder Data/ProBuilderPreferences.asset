@@ -25,6 +25,8 @@ MonoBehaviour:
   - pbMeshesAreAssets
   - pb_SmoothingGroupEditor::m_DrawNormals
   - pb_SmoothingGroupEditor::m_ShowPreview
+  - pbGenerateUV2PerObject
+  - pbUVMaterialPreview
   m_Int_keys:
   - pbDefaultCollider
   - pbDefaultStaticFlags
@@ -45,8 +47,8 @@ MonoBehaviour:
   m_Color_keys: []
   m_Material_keys:
   - pbDefaultMaterial
-  m_Bool_values: 01000001010001010000000000
-  m_Int_values: 0200000000000000020000000000000000000000020000000000000001000000
+  m_Bool_values: 010000010100010100000000000001
+  m_Int_values: 0200000000000000020000000000000000000000000000000000000001000000
   m_Float_values:
   - 0
   - 0
