@@ -800,6 +800,7 @@
             <e p="ColorizeObject.cs" t="Include" />
             <e p="GenaratedColorObject.cs" t="Include" />
           </e>
+          <e p="Tips.txt" t="Include" />
         </e>
       </e>
       <e p="EyeWalkingSim.sln" t="IncludeFlat" />

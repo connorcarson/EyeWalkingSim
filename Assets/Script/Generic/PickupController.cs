@@ -7,8 +7,10 @@ public class PickupController : MonoBehaviour
     public Camera ca;
     private Ray ra;
     private RaycastHit hit;
-    private int flag = 0;
+    public int flag = 0;
     private Vector3 pickupPos;
+    private Quaternion pickupRot;
+    private GameObject pickupObj;
 
     // Use this for initialization  
     void Start()
@@ -21,28 +23,38 @@ public class PickupController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             ra = ca.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ra, out hit) && hit.collider.gameObject.CompareTag("canBePickup"))
-            {
-                if (flag == 0)
+                if (pickupObj==null)
                 {
-                    flag = 1;
-                    Debug.Log("Pickup!");
+                    if (Physics.Raycast(ra, out hit) && hit.collider.gameObject.CompareTag("canBePickup"))
+                    {
+                        pickupObj = hit.collider.gameObject;
+                        Debug.Log("Pickup!");
+                        if (pickupObj.GetComponent<Collider>() != null)
+                        {
+                            pickupObj.GetComponent<Collider>().enabled = false;
+                        }
+                    }
                 }
                 else
                 {
-                    flag = 0;
+                    Vector3 dropPos = transform.Find("DropPosition").position;
+                    pickupObj.transform.position = dropPos;
+                    if(pickupObj.GetComponent<Collider>()!=null)
+                    {
+                        pickupObj.GetComponent<Collider>().enabled = true;
+                    }
+                    pickupObj=null;
                 }
-            }
         }
 
-        if (flag == 1)
+        if (pickupObj!=null)
         {
-            if (hit.collider.gameObject.tag == "canBePickup")
-            {
                 //hit.collider.gameObject.transform.position = ca.ScreenToWorldPoint(new Vector3(Input.mousePosition.x,
                     //Input.mousePosition.y, hit.collider.gameObject.transform.position.z));
-                hit.collider.gameObject.transform.position = ca.ScreenToWorldPoint(GetComponentInChildren<Transform>().position);
-            }
+                pickupPos = transform.Find("PickupPosition").position;
+                pickupRot = transform.Find("PickupPosition").rotation;
+                pickupObj.transform.position = pickupPos;
+                pickupObj.transform.rotation = pickupRot;
         }
 
     }
