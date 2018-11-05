@@ -23,6 +23,7 @@ public class ColorizeObject : MonoBehaviour
 
     public void BeenClicked(GameObject target, RaycastHit hit)
     {
+        Debug.Log("Color!");
         if (!isColorize)
         {
             material.SetColor("_Color", new Color(color.x, color.y, color.z));
