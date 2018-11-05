@@ -27,15 +27,19 @@ public class FirstPartLevelManager : MonoBehaviour
     void Start ()
     {
         //StartCoroutine(PrepareCountDown(gameTimer));
-        gameProcess = EGameProcess.EyeClosePROCEED;
+        gameProcess = EGameProcess.FollowQuestPROCEED;
         //StartCoroutine(LevelCountDown(gameTimer));
     }
 
     void Update()
     {
-        EyeCloseStateCheck();
-        
-    }
+        //这里写的有点不太好，不能够把所有的条件都整合在这个脚本里面进行check和控制，目前只有眼睛开闭经此控制，因为这是一个及时性的检测机制
+        if (gameProcess == EGameProcess.EyeClosePROCEED)
+        {
+            EyeCloseStateCheck();
+        }
+
+}
 
     
     public GameObject leftEye;
@@ -47,10 +51,10 @@ public class FirstPartLevelManager : MonoBehaviour
                 Debug.Log(gameProcess);
                 leftEyeState = leftEye.GetComponent<EyeInteraction>().eyeClosed;
                 rightEyeState = rightEye.GetComponent<EyeInteraction>().eyeClosed;
-                if (leftEyeState && rightEyeState && gameProcess == EGameProcess.EyeClosePROCEED)
+                if (leftEyeState && rightEyeState)
                 {
-                    gameProcess = EGameProcess.EyeToBoat;
-                    seaAudio.Play();
+                    gameProcess = EGameProcess.HallwayPROCEED;
+                    //门开的方式
                 }
     }
 

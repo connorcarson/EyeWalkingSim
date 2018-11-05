@@ -22,10 +22,14 @@ public class GameControlManager : MonoBehaviour {
 public enum EGameProcess
 {
     PREPARE,
-    FollowQuest,
+    FollowQuestPROCEED,
+    DoctorPuzzelPROCEED,
     EyeClosePROCEED,
-    EyeToBoat,
+    HallwayPROCEED,
+    PharmacyPROCEED,
+    ColorRoomPROCEED,
     BoatPROCEED,
-    BoatToEyePuzzel,
+    BoatToEyePuzzelPROCEED,
+    EyePuzzelPROCEED,
     END,
 }
