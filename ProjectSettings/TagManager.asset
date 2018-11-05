@@ -10,6 +10,8 @@ TagManager:
   - ColorizeObject
   - ChaseLight
   - HallwayWalls
+  - Text
+  - Doctor
   layers:
   - Default
   - TransparentFX

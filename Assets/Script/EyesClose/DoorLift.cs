@@ -11,7 +11,7 @@ public class DoorLift : MonoBehaviour {
 	}
 
 	void Update () {
-		if (FirstPartLevelManager.Instance.gameProcess == EGameProcess.EyeToBoat)
+		if (FirstPartLevelManager.Instance.gameProcess == EGameProcess.BoatToEyePuzzelPROCEED)
 		{
 			StartCoroutine(DoorWaitOpen(waitForSeconds));
 		}

@@ -742,9 +742,6 @@
             <e p="PlanetCollision.cs" t="Include" />
             <e p="PlanetRotate.cs" t="Include" />
           </e>
-          <e p="CheckItemOrUse" t="Include">
-            <e p="CheckItem.cs" t="Include" />
-          </e>
           <e p="EyeGameAndCoridor" t="Include">
             <e p="CorridorDoor.cs" t="Include" />
             <e p="CorridorDoorCloseTrigger.cs" t="Include" />
@@ -768,8 +765,12 @@
             <e p="QuestItemPill.cs" t="Include" />
           </e>
           <e p="Generic" t="Include">
+            <e p="CheckItemOrUse" t="Include">
+              <e p="CheckItem.cs" t="Include" />
+            </e>
             <e p="FirstPartLevelManager.cs" t="Include" />
             <e p="GameControlManager.cs" t="Include" />
+            <e p="PickupController.cs" t="Include" />
             <e p="TextController.cs" t="Include" />
           </e>
           <e p="HallwayRun" t="Include">

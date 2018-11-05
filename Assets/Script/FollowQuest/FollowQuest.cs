@@ -43,7 +43,7 @@ public class FollowQuest : MonoBehaviour {
 		if (FirstPartLevelManager.Instance.gameProcess == EGameProcess.FollowQuestPROCEED && commandStart == false)
 		{
 			//最开始的命令
-			TextController.Instance.showText(DialogLine[orderCase]);
+			TextController.Instance.showText(DialogLine[orderCase], null);
 			commandStart = true;
 		}
 	}
