@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\conno\.Rider2018.2\config\extensions" t="IncludeRecursive" />
-    <e p="C:\Users\conno\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\conno\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_EyeWalkingSim.-327426255.00" t="ExcludeRecursive" />
-    <e p="D:\Unity Projects\GitClones\EyeWalkingSim" t="IncludeRecursive">
+    <e p="C:\Users\Administrator\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Administrator\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_EyeWalkingSim.-316552876.00" t="ExcludeRecursive" />
+    <e p="E:\NYU\Game Studio I\EyeWalkingSim" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -740,8 +739,10 @@
           <e p="BoatAndPlanet" t="Include">
             <e p="BoatCamera.cs" t="Include" />
             <e p="BoatMove.cs" t="Include" />
+            <e p="ItemFloat.cs" t="Include" />
             <e p="PlanetCollision.cs" t="Include" />
             <e p="PlanetRotate.cs" t="Include" />
+            <e p="PlayerEatPlanets.cs" t="Include" />
           </e>
           <e p="EyeGameAndCoridor" t="Include">
             <e p="CorridorDoor.cs" t="Include" />
