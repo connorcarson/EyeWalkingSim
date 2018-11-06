@@ -763,6 +763,7 @@
           <e p="FollowQuest" t="Include">
             <e p="DoctorAndEyes.cs" t="Include" />
             <e p="FollowQuest.cs" t="Include" />
+            <e p="Quest.txt" t="Include" />
             <e p="QuestItem.cs" t="Include" />
             <e p="QuestItemPill.cs" t="Include" />
           </e>

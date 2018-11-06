@@ -8,11 +8,11 @@ public class PharmacyDoctor : MonoBehaviour
 
 	private void Start()
 	{
-		TextController.Instance.showText("Please, take the pillHs.", voice);
+		voice = GetComponent<AudioSource>();
 	}
 
 	public void BeenClicked()
 	{
-		voice.Play();
+		TextController.Instance.showText("Please, take the pillHs.", voice);
 	}
 }

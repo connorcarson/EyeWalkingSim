@@ -39,6 +39,10 @@ public class PickupController : MonoBehaviour
                     if (Physics.Raycast(ra, out hit) && hit.collider.gameObject.CompareTag("canBePickup"))
                     {
                         pickupObj = hit.collider.gameObject;
+                        if (pickupObj.GetComponent<AudioSource>() != null)
+                        {
+                            pickupObj.GetComponent<AudioSource>().Play();
+                        }
                         Debug.Log("Pickup!");
                         if (pickupObj.GetComponent<Collider>() != null)
                         {

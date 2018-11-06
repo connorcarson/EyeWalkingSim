@@ -8,24 +8,45 @@ public class QuestItemPill : MonoBehaviour {
 	public bool DoctorQuest;
 	// Use this for initialization
 	void Start () {
-		DoctorQuest=GameObject.FindGameObjectWithTag("Doctor").GetComponent<DoctorAndEyes>().commandStart;
+		//DoctorQuest=GameObject.FindGameObjectWithTag("Doctor").GetComponent<DoctorAndEyes>().commandStart;
 	}
      	
 	// Update is called once per frame
 	void Update () {
-     
+		DoctorQuest=GameObject.FindGameObjectWithTag("GameController").GetComponent<DoctorAndEyes>().commandStart;
 	}
      
 	public void OnMouseEnter()
 	{
 		if (FollowQuest.Instance.followTheQuest && caseNumber==FollowQuest.Instance.orderCase)
 		{
-			FollowQuest.Instance.TrueAnswer();
-			FollowQuest.Instance.FalseAnswer();
+			//显示UI
+			if (Input.GetKeyDown(0))
+			{
+				FollowQuest.Instance.TrueAnswer();
+			}
+
+			if (Input.GetKeyDown(1))
+			{
+				FollowQuest.Instance.FalseAnswer();
+			}
 		}
 
 		if (DoctorQuest)
 		{
+			//显示UI
+			if (Input.GetKeyDown(0))
+			{
+				FirstPartLevelManager.Instance.gameProcess = EGameProcess.FollowQuestPROCEED;
+				GameObject.FindGameObjectWithTag("Doctor").SetActive(false);
+				gameObject.SetActive(false);
+				GameObject.FindGameObjectWithTag("GameController").GetComponent<DoctorAndEyes>().commandStart = false;
+			}
+
+			if (Input.GetKeyDown(1))
+			{
+				
+			}
 			//选择yes   FirstPartLevelManager.Instance.gameProcess = EGameProcess.FollowQuestPROCEED;
 			//doctor回去
 			//DoctorQuest = false;

@@ -18,10 +18,16 @@ public class QuestItem : MonoBehaviour
      	{
      		if (FollowQuest.Instance.followTheQuest && caseNumber==FollowQuest.Instance.orderCase)
      		{
-     			FollowQuest.Instance.TrueAnswer();
-                 FollowQuest.Instance.FalseAnswer();
-     		}
-     		
-     		
+			     //显示UI
+			     if (Input.GetKeyDown(0))
+			     {
+				     FollowQuest.Instance.TrueAnswer();
+			     }
+
+			     if (Input.GetKeyDown(1))
+			     {
+				     FollowQuest.Instance.FalseAnswer();
+			     }
+		     }
      	}
 }

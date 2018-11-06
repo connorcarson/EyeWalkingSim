@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.UI;
 
 public class FollowQuest : MonoBehaviour {
 	public int orderCase = 0;
 	public TextAsset DialogueFile;
 	public string[] DialogLine;
-
+	public GameObject[] MassObj;
+	public GameObject[] TidyObj;
+	public AudioClip mumble;
 	public float waitSeconds = 3.0f;
 	public bool followTheQuest = false;
 	private bool commandStart = false;
@@ -43,24 +46,28 @@ public class FollowQuest : MonoBehaviour {
 		if (FirstPartLevelManager.Instance.gameProcess == EGameProcess.FollowQuestPROCEED && commandStart == false)
 		{
 			//最开始的命令
-			TextController.Instance.showText(DialogLine[orderCase], null);
+			if (mumble != null)
+			{
+				GetComponent<AudioSource>().clip = mumble;
+				TextController.Instance.showText(DialogLine[orderCase], GetComponent<AudioSource>());
+			}
+			else
+			{
+				TextController.Instance.showText(DialogLine[orderCase], null);
+			}
+			
+			GeneralMove(orderCase);
 			commandStart = true;
 		}
 	}
 	
 	public void TrueAnswer()
     {
-    		switch (orderCase)
-    		{
-    				case 0:
-					    break;
-    				case 1:
-					    break;
-				    case 4:
-					    pillMention = 0;
-    					break;
-    		}
-
+	    GeneralMove(orderCase);
+	    if (orderCase == MassObj.Length-1)
+	    {
+		     pillMention = 0;
+	    }
 	    followTheQuest = false;
 	    StartCoroutine(WaitForFurtherTaskTrue());
 	}
@@ -79,7 +86,7 @@ public class FollowQuest : MonoBehaviour {
 		}
 
 		yield return new WaitForSeconds(waitSeconds);
-		if (orderCase != 4)
+		if (orderCase != MassObj.Length-1)
 		{
 			orderCase++;
 		}
@@ -101,7 +108,7 @@ public class FollowQuest : MonoBehaviour {
 		yield return new WaitForSeconds(waitSeconds);
 		
 		//pill exit
-		if (orderCase == 4)
+		if (orderCase == MassObj.Length-1)
 		{
 			//pills
 			pillMention++;
@@ -118,15 +125,17 @@ public class FollowQuest : MonoBehaviour {
 	
 	void outcastOrder(int caseNumber)
 	{
-		switch (caseNumber)
+
+		if (mumble != null)
 		{
-			case 1:
-				//把东西弄乱TODO
-			//声音
-			//UI
-				followTheQuest = true;
-				break;
+			GetComponent<AudioSource>().clip = mumble;
+			TextController.Instance.showText(DialogLine[orderCase], GetComponent<AudioSource>());
 		}
+		else
+		{
+			TextController.Instance.showText(DialogLine[orderCase], null);
+		}
+		followTheQuest = true;
 	}
 
 	void RestartSetup()
@@ -136,4 +145,11 @@ public class FollowQuest : MonoBehaviour {
 		followTheQuest = false;
 		pillMention = 0;
 	}
+
+	void GeneralMove(int ordercase)
+	{
+		if(MassObj[ordercase]!=null){MassObj[ordercase].SetActive(!MassObj[ordercase].activeSelf);}
+		if(TidyObj[ordercase]!=null){TidyObj[ordercase].SetActive(!TidyObj[ordercase].activeSelf);}
+	}
+	
 }
