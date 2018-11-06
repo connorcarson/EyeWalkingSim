@@ -12,6 +12,7 @@ TagManager:
   - HallwayWalls
   - Text
   - Doctor
+  - canBePickup
   layers:
   - Default
   - TransparentFX

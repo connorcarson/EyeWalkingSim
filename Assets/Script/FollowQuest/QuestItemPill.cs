@@ -41,6 +41,11 @@ public class QuestItemPill : MonoBehaviour {
 				GameObject.FindGameObjectWithTag("Doctor").SetActive(false);
 				gameObject.SetActive(false);
 				GameObject.FindGameObjectWithTag("GameController").GetComponent<DoctorAndEyes>().commandStart = false;
+				AudioSource followOrderSound = GetComponent<AudioSource>();
+				if (followOrderSound != null)
+				{
+					followOrderSound.Play();
+				}
 			}
 
 			if (Input.GetKeyDown(1))

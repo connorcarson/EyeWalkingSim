@@ -69,6 +69,12 @@ public class FollowQuest : MonoBehaviour {
 		     pillMention = 0;
 	    }
 	    followTheQuest = false;
+	    AudioSource followOrderSound = MassObj[orderCase].GetComponent<AudioSource>();
+	    if (followOrderSound != null)
+	    {
+		    followOrderSound.Play();
+	    }
+
 	    StartCoroutine(WaitForFurtherTaskTrue());
 	}
 
