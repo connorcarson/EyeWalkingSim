@@ -1,0 +1,6 @@
+--------------pick up ---------------
+all the things that can be picked up need rigidbody
+and collider
+and tag as canBePickup
+should add the script (itembeenpickedup)
+build a PickupPosition as a child of the cam, and assign this cam to the script(attach to the cam)

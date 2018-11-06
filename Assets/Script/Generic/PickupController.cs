@@ -6,23 +6,34 @@ public class PickupController : MonoBehaviour
 {
     public Camera ca;
     private Ray ra;
-    private RaycastHit hit;
+    public RaycastHit hit;
     public int flag = 0;
     private Vector3 pickupPos;
     private Quaternion pickupRot;
-    private GameObject pickupObj;
+    public GameObject pickupObj;
+    public Material outlineMat;
 
-    // Use this for initialization  
-    void Start()
+    private static PickupController instance;
+    public static PickupController Instance
     {
+        get
+        {
+            return instance;
+        }
     }
-
+	
+    void Awake()
+    {
+        instance = this;
+    }
+    
     // Update is called once per frame  
     void Update()
     {
+        ra = ca.ScreenPointToRay(Input.mousePosition);
         if (Input.GetKeyDown(KeyCode.E))
         {
-            ra = ca.ScreenPointToRay(Input.mousePosition);
+            //ra = ca.ScreenPointToRay(Input.mousePosition);
                 if (pickupObj==null)
                 {
                     if (Physics.Raycast(ra, out hit) && hit.collider.gameObject.CompareTag("canBePickup"))
@@ -56,6 +67,6 @@ public class PickupController : MonoBehaviour
                 pickupObj.transform.position = pickupPos;
                 pickupObj.transform.rotation = pickupRot;
         }
-
+        
     }
 }

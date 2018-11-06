@@ -770,11 +770,13 @@
             </e>
             <e p="FirstPartLevelManager.cs" t="Include" />
             <e p="GameControlManager.cs" t="Include" />
+            <e p="ItemBeenPickedUp.cs" t="Include" />
             <e p="PickupController.cs" t="Include" />
             <e p="TextController.cs" t="Include" />
           </e>
           <e p="HallwayRun" t="Include">
             <e p="ExitDoorTrigger.cs" t="Include" />
+            <e p="HallwayDoorAni.cs" t="Include" />
             <e p="HallwayDoorCloseTrigger.cs" t="Include" />
             <e p="HallwayDoorOpenTrigger.cs" t="Include" />
             <e p="HallwayEnemy.cs" t="Include" />
@@ -801,6 +803,10 @@
           </e>
           <e p="Tips.txt" t="Include" />
         </e>
+        <e p="Shader" t="Include">
+          <e p="OutlineShader.shader" t="Include" />
+        </e>
+        <e p="Tips.txt" t="Include" />
       </e>
       <e p="EyeWalkingSim.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />

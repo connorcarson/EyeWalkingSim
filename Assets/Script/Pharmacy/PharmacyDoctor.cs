@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PharmacyDoctor : MonoBehaviour {
+public class PharmacyDoctor : MonoBehaviour
+{
+	private AudioSource voice;
 
-	// Use this for initialization
-	void Start () {
-		
+	private void Start()
+	{
+		TextController.Instance.showText("Please, take the pillHs.", voice);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void BeenClicked()
+	{
+		voice.Play();
 	}
 }
