@@ -760,6 +760,9 @@
             <e p="PlanetRotate.cs" t="Include" />
             <e p="PlayerEatPlanets.cs" t="Include" />
           </e>
+          <e p="ConnorScripts" t="Include">
+            <e p="LoadSceneScript.cs" t="Include" />
+          </e>
           <e p="EyeGameAndCoridor" t="Include">
             <e p="CorridorDoor.cs" t="Include" />
             <e p="CorridorDoorCloseTrigger.cs" t="Include" />

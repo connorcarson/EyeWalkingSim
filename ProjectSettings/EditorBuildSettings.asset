@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/YukiiTestScene/EyeBallClose.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/Hospital_Hall.unity
+    guid: cd3b997f13da6b940922bab560995450
+  - enabled: 1
+    path: Assets/Scenes/Hospital_Hall_Scene2.unity
+    guid: d93a4b4d68acdb24ebcab610c49fb6cf
   m_configObjects: {}
