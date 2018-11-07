@@ -23,7 +23,7 @@ public class BoatMove : MonoBehaviour
 	
 	void Update ()
     {
-        if (FirstPartLevelManager.Instance.gameProcess == EGameProcess.BoatPROCEED)
+        if (ThirdPartLevelManager.Instance.gameProcess == EGameProcess.BoatPROCEED)
         {
             h = Input.GetAxis("Horizontal") * Time.deltaTime;
             v = Input.GetAxis("Vertical") * Time.deltaTime;

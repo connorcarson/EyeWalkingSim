@@ -8,7 +8,8 @@ build a PickupPosition as a child of the cam, and assign this cam to the script(
 
 --------------quest--------------
 for quest item,each of them has a child called Text
-
+pharmacydoctorandtape should be on the doctor
 1.sound
 the FollowQuest controller need mumble sound and audiosource
 each massobj need AS and clip
+doctor's have their own AS and clip

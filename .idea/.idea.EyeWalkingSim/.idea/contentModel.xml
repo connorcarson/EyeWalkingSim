@@ -344,6 +344,13 @@
               </e>
             </e>
           </e>
+          <e p="Simple Helvetica" t="Include">
+            <e p="Editor" t="Include">
+              <e p="SimpleHelveticaCustomEditor.cs" t="Include" />
+            </e>
+            <e p="README.txt" t="Include" />
+            <e p="SimpleHelvetica.cs" t="Include" />
+          </e>
           <e p="Standard Assets" t="Include">
             <e p="2D" t="Include">
               <e p="Scripts" t="Include">
@@ -776,6 +783,7 @@
             <e p="ItemBeenPickedUp.cs" t="Include" />
             <e p="PickupController.cs" t="Include" />
             <e p="TextController.cs" t="Include" />
+            <e p="ThirdPartLevelManager.cs" t="Include" />
           </e>
           <e p="HallwayRun" t="Include">
             <e p="ExitDoorTrigger.cs" t="Include" />
@@ -792,6 +800,7 @@
           <e p="Pharmacy" t="Include">
             <e p="PharmacyDoctor.cs" t="Include" />
             <e p="PharmacyDoctorAndTape.cs" t="Include" />
+            <e p="PharmacyDoorWithKey.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="PlayerChasedByLight.cs" t="Include" />
