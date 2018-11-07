@@ -19,12 +19,12 @@ public class QuestItem : MonoBehaviour
      		if (FollowQuest.Instance.followTheQuest && caseNumber==FollowQuest.Instance.orderCase)
      		{
 			     //显示UI
-			     if (Input.GetKeyDown(0))
+			     if (Input.GetKeyDown(KeyCode.E))
 			     {
 				     FollowQuest.Instance.TrueAnswer();
 			     }
 
-			     if (Input.GetKeyDown(1))
+			     if (Input.GetKeyDown(KeyCode.Q))
 			     {
 				     FollowQuest.Instance.FalseAnswer();
 			     }

@@ -8,14 +8,14 @@ public class DoctorAndEyes : MonoBehaviour
 	public bool commandStart;
 	public Text theText;
 
-	private AudioSource doctorVoice;
-	private AudioSource doorKnock;
+	public AudioSource doctorVoice;
+	public AudioClip doorKnock;
+	AudioSource myAud;
 	// Use this for initialization
 	void Start()
 	{
 		theText = GameObject.FindGameObjectWithTag("Text").GetComponent<Text>();
 		doctorVoice = GameObject.FindGameObjectWithTag("Doctor").GetComponent<AudioSource>();
-		doorKnock = GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
@@ -25,7 +25,9 @@ public class DoctorAndEyes : MonoBehaviour
 			//最开始的命令
 			GameObject.FindGameObjectWithTag("Doctor").SetActive(true);
 			GameObject.FindGameObjectWithTag("Doctor").GetComponent<DoctorAndEyes>().commandStart = false;
-			doorKnock.Play();
+			myAud = GetComponent<AudioSource>();
+			myAud.clip = doorKnock;
+			myAud.Play();
 			TextController.Instance.showText("Please, take the pillHs.", doctorVoice);
 			commandStart = true;
 			//医生出现
