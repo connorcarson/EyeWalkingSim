@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Administrator\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Administrator\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_EyeWalkingSim.-316552876.00" t="ExcludeRecursive" />
-    <e p="E:\NYU\Game Studio I\EyeWalkingSim" t="IncludeRecursive">
+    <e p="C:\Users\conno\.Rider2018.2\config\extensions" t="IncludeRecursive" />
+    <e p="C:\Users\conno\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\conno\.Rider2018.2\system\resharper-host\local\Transient\ReSharperHost\v182\SolutionCaches\_EyeWalkingSim.-327426255.00" t="ExcludeRecursive" />
+    <e p="D:\Unity Projects\GitClones\EyeWalkingSim" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -18,6 +19,14 @@
               <e p="DOTweenModuleUnityVersion.cs" t="Include" />
               <e p="DOTweenModuleUtils.cs" t="Include" />
             </e>
+            <e p="README.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Fonts" t="Include">
+          <e p="computer-7" t="Include">
+            <e p="README.txt" t="Include" />
+          </e>
+          <e p="computer-pixel-7" t="Include">
             <e p="README.txt" t="Include" />
           </e>
         </e>
@@ -780,7 +789,7 @@
             </e>
             <e p="FirstPartLevelManager.cs" t="Include" />
             <e p="GameControlManager.cs" t="Include" />
-            <e p="ItemBeenPickedUp.cs" t="Include" />
+            <e p="ItemBeenPickedup.cs" t="Include" />
             <e p="PickupController.cs" t="Include" />
             <e p="TextController.cs" t="Include" />
             <e p="ThirdPartLevelManager.cs" t="Include" />
