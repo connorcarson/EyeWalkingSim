@@ -13,42 +13,41 @@ public class QuestItemPill : MonoBehaviour {
      	
 	// Update is called once per frame
 	void Update () {
-		DoctorQuest=GameObject.FindGameObjectWithTag("GameController").GetComponent<DoctorAndEyes>().commandStart;
+		//DoctorQuest=GameObject.FindGameObjectWithTag("GameController").GetComponent<DoctorAndEyes>().commandStart;
 	}
      
 	public void OnMouseEnter()
 	{
-		if (FollowQuest.Instance.followTheQuest && caseNumber==FollowQuest.Instance.orderCase)
+		if (FirstPartLevelManager.Instance.gameProcess == EGameProcess.FollowQuestPROCEED && FollowQuest.Instance.followTheQuest && caseNumber==FollowQuest.Instance.orderCase)
 		{
 			//显示UI
-			if (Input.GetKeyDown(0))
+			if (Input.GetKeyDown(KeyCode.E))
 			{
 				FollowQuest.Instance.TrueAnswer();
 			}
 
-			if (Input.GetKeyDown(1))
+			if (Input.GetKeyDown(KeyCode.Q))
 			{
 				FollowQuest.Instance.FalseAnswer();
 			}
+		}else
+		{
+
+			//显示UI
+		if (Input.GetKeyDown(KeyCode.E))
+		{
+			FirstPartLevelManager.Instance.gameProcess = EGameProcess.FollowQuestPROCEED;
+			GameObject.FindGameObjectWithTag("Doctor").SetActive(false);
+			gameObject.SetActive(false);
+			GameObject.FindGameObjectWithTag("GameController").GetComponent<DoctorAndEyes>().commandStart = false;
+			AudioSource followOrderSound = GetComponent<AudioSource>();
+			if (followOrderSound != null)
+			{
+				followOrderSound.Play();
+			}
 		}
 
-		if (DoctorQuest)
-		{
-			//显示UI
-			if (Input.GetKeyDown(0))
-			{
-				FirstPartLevelManager.Instance.gameProcess = EGameProcess.FollowQuestPROCEED;
-				GameObject.FindGameObjectWithTag("Doctor").SetActive(false);
-				gameObject.SetActive(false);
-				GameObject.FindGameObjectWithTag("GameController").GetComponent<DoctorAndEyes>().commandStart = false;
-				AudioSource followOrderSound = GetComponent<AudioSource>();
-				if (followOrderSound != null)
-				{
-					followOrderSound.Play();
-				}
-			}
-
-			if (Input.GetKeyDown(1))
+		if (Input.GetKeyDown(KeyCode.Q))
 			{
 				
 			}

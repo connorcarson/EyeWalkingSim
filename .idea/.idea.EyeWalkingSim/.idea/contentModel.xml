@@ -791,6 +791,7 @@
           <e p="OverShootRotate.cs" t="Include" />
           <e p="Pharmacy" t="Include">
             <e p="PharmacyDoctor.cs" t="Include" />
+            <e p="PharmacyDoctorAndTape.cs" t="Include" />
           </e>
           <e p="Player" t="Include">
             <e p="PlayerChasedByLight.cs" t="Include" />
