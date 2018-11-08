@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using ProBuilder.Core;
 using UnityEngine;
 using UnityEngine.Internal.Experimental.UIElements;
 using UnityEngine.SceneManagement;
@@ -12,18 +13,33 @@ public class LoadSceneScript : MonoBehaviour
 
 	public Button YourFirstButton;
 	private bool Shift;
+	public GameObject obj;
+	private bool canFade;
+	private float timeToFade = 3.0f;
+	private float tempColor;
 	
 	void Start()
 	{
 		//Calls the TaskOnClick/TaskWithParameters/ButtonClicked method when you click the Button
 		YourFirstButton.onClick.AddListener(TaskOnClick);
-
+		canFade = false;
+		//alphaColor = obj.GetComponent<Image>().color;
 	}
-	
+
+	void Update()
+	{
+		if (canFade)
+		{
+			tempColor = Mathf.Lerp(obj.GetComponent<Image>().color.a, 0, timeToFade * Time.deltaTime);
+			obj.GetComponent<Image>().color= new Color(0,0,0,tempColor);
+		}
+	}
+
 	public void TaskOnClick()
 	{
 		//Output this to console when Button1 or Button3 is clicked
 		StartCoroutine(DoFade());
+		canFade = true;
 		Debug.Log("You have clicked the button!");
 	}
 	
@@ -35,21 +51,22 @@ public class LoadSceneScript : MonoBehaviour
 		yield return null;
 	}*/
 
-	IEnumerator DoFade(){
-		CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
-		while (canvasGroup.alpha > 0)
-		{
-			canvasGroup.alpha -= Time.deltaTime / 4;
+	IEnumerator DoFade()
+	{
+			CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
+			while (canvasGroup.alpha > 0)
+			{
+				canvasGroup.alpha -= Time.deltaTime / 4;
+				yield return null;
+			}
+	
+			if (canvasGroup.alpha < 0.01 && !Shift)
+			{
+				StartCoroutine(LoadYourAsyncScene());
+				Shift = true;
+			}
+			canvasGroup.interactable = false;
 			yield return null;
-		}
-
-		if (canvasGroup.alpha < 0.01 && !Shift)
-		{
-			StartCoroutine(LoadYourAsyncScene());
-			Shift = true;
-		}
-		canvasGroup.interactable = false;
-		yield return null;
 	}
 	
 	IEnumerator LoadYourAsyncScene()

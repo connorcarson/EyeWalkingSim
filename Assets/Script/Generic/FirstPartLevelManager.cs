@@ -46,7 +46,7 @@ public class FirstPartLevelManager : MonoBehaviour
     public GameObject rightEye;
     public GameObject leftEyeScript;
     public GameObject rightEyeScript;
-    public AudioSource seaAudio;
+    public AudioClip doorOpenAudio;
     
     void EyeCloseStateCheck()
     {
@@ -55,6 +55,9 @@ public class FirstPartLevelManager : MonoBehaviour
                 rightEyeState = rightEyeScript.GetComponent<EyeInteraction>().eyeClosed;
                 if (leftEyeState && rightEyeState)
                 {
+                    gameObject.GetComponent<AudioSource>().clip = doorOpenAudio;
+                    gameObject.GetComponent<AudioSource>().loop = true;
+                    gameObject.GetComponent<AudioSource>().Play();
                     gameProcess = EGameProcess.HallwayPROCEED;
                     //门开的方式
                 }

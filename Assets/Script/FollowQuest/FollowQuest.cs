@@ -68,7 +68,6 @@ public class FollowQuest : MonoBehaviour {
 	
 	public void TrueAnswer()
     {
-	    GeneralMove(orderCase);
 	    if (orderCase == MassObj.Length-1)
 	    {
 		     pillMention = 0;
@@ -79,7 +78,7 @@ public class FollowQuest : MonoBehaviour {
 	    {
 		    followOrderSound.Play();
 	    }
-
+	    GeneralMove(orderCase);
 	    StartCoroutine(WaitForFurtherTaskTrue());
 	}
 

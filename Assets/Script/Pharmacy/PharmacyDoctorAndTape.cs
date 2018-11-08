@@ -13,11 +13,14 @@ namespace Script.Pharmacy
         private float playerFace;
         private GameObject player;
         public GameObject doctor;
+        private AudioSource myAud;
+        public AudioClip tapeSound;
 
         private void Start()
         {
             voice = doctor.GetComponent<AudioSource>();
             player=GameObject.FindWithTag("Player");
+            myAud = GetComponent<AudioSource>();
         }
 
         /*public void BeenClicked()
@@ -54,6 +57,8 @@ namespace Script.Pharmacy
                             {
                                 tapeUse[tapeUseNumber].SetActive(true);
                                 tapeUseNumber++;
+                                myAud.clip=tapeSound;
+                                myAud.Play();
                                 if (tapeUseNumber == tapeUse.Length)
                                 {
                                     tape.SetActive(false);

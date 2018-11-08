@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WallDisappear : MonoBehaviour
 {
-	private float waitTime=5.0f;
+	public float waitTime=5.0f;
 	public GameObject[] wallLayer;
 	public bool WallDisappearShift;
 	private int layerNum = 0;
