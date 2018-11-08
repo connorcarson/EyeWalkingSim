@@ -13,7 +13,7 @@ public class ItemBeenPickedup : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		if (PickupController.Instance.hit.collider.gameObject!=null && PickupController.Instance.hit.collider.gameObject== gameObject)
+		if (RayCast.Instance.raycastFind && RayCast.Instance.hit.collider.gameObject== gameObject)
 		{
 			GetComponent<Renderer>().material = PickupController.Instance.outlineMat;
 		}

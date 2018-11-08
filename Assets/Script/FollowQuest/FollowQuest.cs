@@ -6,6 +6,9 @@ using UnityEngine.UI;
 
 public class FollowQuest : MonoBehaviour {
 	public int orderCase = 0;
+	public int[] orders;
+    private int whichOrderNow=0;
+	
 	public TextAsset DialogueFile;
 	public string[] DialogLine;
 	public GameObject[] MassObj;
@@ -14,7 +17,7 @@ public class FollowQuest : MonoBehaviour {
 	public float waitSeconds = 3.0f;
 	public bool followTheQuest = false;
 	private bool commandStart = false;
-	private int pillMention = 0;
+	public int pillMention = 0;
 	
 	//public Text theText;
 	
@@ -39,6 +42,7 @@ public class FollowQuest : MonoBehaviour {
 			DialogLine = (DialogueFile.text.Split('\n'));
 		}
 		//theText = GameObject.FindWithTag("Text").GetComponent<Text>();
+		orderCase = orders[whichOrderNow];
 	}
 	
 	// Update is called once per frame
@@ -57,6 +61,7 @@ public class FollowQuest : MonoBehaviour {
 			}
 			
 			GeneralMove(orderCase);
+			followTheQuest = true;
 			commandStart = true;
 		}
 	}
@@ -70,7 +75,7 @@ public class FollowQuest : MonoBehaviour {
 	    }
 	    followTheQuest = false;
 	    AudioSource followOrderSound = MassObj[orderCase].GetComponent<AudioSource>();
-	    if (followOrderSound != null)
+	    if (followOrderSound != null && followOrderSound.clip!=null)
 	    {
 		    followOrderSound.Play();
 	    }
@@ -92,15 +97,16 @@ public class FollowQuest : MonoBehaviour {
 		}
 
 		yield return new WaitForSeconds(waitSeconds);
-		if (orderCase != MassObj.Length-1)
+		if (whichOrderNow!= orders.Length-1)
 		{
-			orderCase++;
+			whichOrderNow++;
 		}
 		else
 		{
-		    orderCase = 0;
+		    whichOrderNow = 0;
 		}
-
+		orderCase = orders[whichOrderNow];
+		GeneralMove(orderCase);
 		outcastOrder(orderCase);
 	}
 
@@ -131,7 +137,7 @@ public class FollowQuest : MonoBehaviour {
 	
 	void outcastOrder(int caseNumber)
 	{
-
+Debug.Log("OutcastOrder");
 		if (mumble != null)
 		{
 			GetComponent<AudioSource>().clip = mumble;
@@ -154,6 +160,7 @@ public class FollowQuest : MonoBehaviour {
 
 	void GeneralMove(int ordercase)
 	{
+		Debug.Log("GeneralMove");
 		if(MassObj[ordercase]!=null){MassObj[ordercase].SetActive(!MassObj[ordercase].activeSelf);}
 		if(TidyObj[ordercase]!=null){TidyObj[ordercase].SetActive(!TidyObj[ordercase].activeSelf);}
 	}

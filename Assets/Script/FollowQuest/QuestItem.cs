@@ -4,30 +4,32 @@ using UnityEngine;
 
 public class QuestItem : MonoBehaviour
 {
-     	public int caseNumber;
-     	// Use this for initialization
-     	void Start () {
-     	}
-     	
-     	// Update is called once per frame
-     	void Update () {
-     
-     	}
-     
-     	public void OnMouseEnter()
-     	{
-     		if (FollowQuest.Instance.followTheQuest && caseNumber==FollowQuest.Instance.orderCase)
-     		{
-			     //显示UI
-			     if (Input.GetKeyDown(KeyCode.E))
-			     {
-				     FollowQuest.Instance.TrueAnswer();
-			     }
+    public int caseNumber;
 
-			     if (Input.GetKeyDown(KeyCode.Q))
-			     {
-				     FollowQuest.Instance.FalseAnswer();
+	
+     	// Use this for initialization
+     	void Start ()
+	     {
+	     }
+     
+     	void Update()
+     	{
+		     if (RayCast.Instance.raycastFind && RayCast.Instance.hit.collider.gameObject == gameObject)
+		     {
+			    
+			     if (FollowQuest.Instance.followTheQuest && caseNumber == FollowQuest.Instance.orderCase)
+			     { Debug.Log("findme");
+				     //显示UI
+				     if (Input.GetKeyDown(KeyCode.E))
+				     {
+					     FollowQuest.Instance.TrueAnswer();
+				     }
+
+				     if (Input.GetKeyDown(KeyCode.Q))
+				     {
+					     FollowQuest.Instance.FalseAnswer();
+				     }
 			     }
 		     }
-     	}
+	     }
 }

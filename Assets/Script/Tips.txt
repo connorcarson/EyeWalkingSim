@@ -1,6 +1,7 @@
 --------------pick up ---------------
 all the things that can be picked up need rigidbody
 and collider
+Collision Detection set to continuous
 and tag as canBePickup
 audiosource on the pickup item will play when the item is picked up
 should add the script (itembeenpickedup)

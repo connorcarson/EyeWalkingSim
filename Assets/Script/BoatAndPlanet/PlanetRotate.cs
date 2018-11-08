@@ -28,8 +28,8 @@ public class PlanetRotate : MonoBehaviour
         this.transform.position = Vector3.zero;
     }
 
-    public float rotateMoveSpeed;
-    public float rotateTurnSpeed;
+    //public float rotateMoveSpeed;
+    //public float rotateTurnSpeed;
 
     public void RotatePlanet(float h, float v)
     {

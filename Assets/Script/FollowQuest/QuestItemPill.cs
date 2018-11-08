@@ -20,6 +20,7 @@ public class QuestItemPill : MonoBehaviour {
 	{
 		if (FirstPartLevelManager.Instance.gameProcess == EGameProcess.FollowQuestPROCEED && FollowQuest.Instance.followTheQuest && caseNumber==FollowQuest.Instance.orderCase)
 		{
+			Debug.Log("Findit");
 			//显示UI
 			if (Input.GetKeyDown(KeyCode.E))
 			{

@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class PickupController : MonoBehaviour
 {
-    public Camera ca;
-    private Ray ra;
-    public RaycastHit hit;
-    public int flag = 0;
+    //public Camera ca;
+    //private Ray ra;
+    //public RaycastHit hit;
+    //public int flag = 0;
     private Vector3 pickupPos;
     private Quaternion pickupRot;
     public GameObject pickupObj;
     public Material outlineMat;
+    public bool raycastFind;
 
     private static PickupController instance;
     public static PickupController Instance
@@ -30,15 +31,14 @@ public class PickupController : MonoBehaviour
     // Update is called once per frame  
     void Update()
     {
-        ra = ca.ScreenPointToRay(Input.mousePosition);
         if (Input.GetKeyDown(KeyCode.E))
         {
             //ra = ca.ScreenPointToRay(Input.mousePosition);
                 if (pickupObj==null)
                 {
-                    if (Physics.Raycast(ra, out hit) && hit.collider.gameObject.CompareTag("canBePickup"))
+                    if (RayCast.Instance.raycastFind && RayCast.Instance.hit.collider.gameObject.CompareTag("canBePickup"))
                     {
-                        pickupObj = hit.collider.gameObject;
+                        pickupObj = RayCast.Instance.hit.collider.gameObject;
                         if (pickupObj.GetComponent<AudioSource>() != null)
                         {
                             pickupObj.GetComponent<AudioSource>().Play();
@@ -46,7 +46,7 @@ public class PickupController : MonoBehaviour
                         Debug.Log("Pickup!");
                         if (pickupObj.GetComponent<Collider>() != null)
                         {
-                            pickupObj.GetComponent<Collider>().enabled = false;
+                            //pickupObj.GetComponent<Collider>().enabled = false;
                         }
                     }
                 }
@@ -56,7 +56,7 @@ public class PickupController : MonoBehaviour
                     pickupObj.transform.position = dropPos;
                     if(pickupObj.GetComponent<Collider>()!=null)
                     {
-                        pickupObj.GetComponent<Collider>().enabled = true;
+                        //pickupObj.GetComponent<Collider>().enabled = true;
                     }
                     pickupObj=null;
                 }
