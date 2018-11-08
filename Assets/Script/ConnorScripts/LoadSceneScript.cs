@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.Internal.Experimental.UIElements;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
@@ -36,7 +37,6 @@ public class LoadSceneScript : MonoBehaviour
 
 	IEnumerator DoFade(){
 		CanvasGroup canvasGroup = GetComponent<CanvasGroup>();
-        
 		while (canvasGroup.alpha > 0)
 		{
 			canvasGroup.alpha -= Time.deltaTime / 4;

@@ -764,6 +764,7 @@
             <e p="PlayerEatPlanets.cs" t="Include" />
           </e>
           <e p="ConnorScripts" t="Include">
+            <e p="CellDoorOpen.cs" t="Include" />
             <e p="Fade.cs" t="Include" />
             <e p="LoadSceneScript.cs" t="Include" />
           </e>
