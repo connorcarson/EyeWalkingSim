@@ -13,6 +13,8 @@ public class PickupController : MonoBehaviour
     public GameObject pickupObj;
     public Material outlineMat;
     public bool raycastFind;
+    public GameObject tape;
+    public GameObject glassWindow;
 
     private static PickupController instance;
     public static PickupController Instance
@@ -48,17 +50,30 @@ public class PickupController : MonoBehaviour
                         {
                             //pickupObj.GetComponent<Collider>().enabled = false;
                         }
+
+                        if (!pickupObj.GetComponent<Rigidbody>().useGravity)
+                        {
+                            pickupObj.GetComponent<Rigidbody>().useGravity = true;
+                        }
                     }
                 }
                 else
                 {
-                    Vector3 dropPos = transform.Find("DropPosition").position;
-                    pickupObj.transform.position = dropPos;
-                    if(pickupObj.GetComponent<Collider>()!=null)
+                    if (pickupObj == tape &&
+                        FirstPartLevelManager.Instance.gameProcess == EGameProcess.DoctorPuzzelPROCEED &&
+                        RayCast.Instance.raycastFind && RayCast.Instance.hit.collider.gameObject == glassWindow)
+                    {}
+                    else
                     {
-                        //pickupObj.GetComponent<Collider>().enabled = true;
+                        Vector3 dropPos = transform.Find("DropPosition").position;
+                        pickupObj.transform.position = dropPos;
+                        if (pickupObj.GetComponent<Collider>() != null)
+                        {
+                            //pickupObj.GetComponent<Collider>().enabled = true;
+                        }
+
+                        pickupObj = null;
                     }
-                    pickupObj=null;
                 }
         }
 

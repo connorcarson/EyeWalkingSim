@@ -29,7 +29,7 @@ public class DoctorAndEyes : MonoBehaviour
 			myAud = GetComponent<AudioSource>();
 			myAud.clip = doorKnock;
 			myAud.Play();
-			TextController.Instance.showText("Please, take the pillHs.", doctorVoice);
+			TextController.Instance.showText("Please, take the pills.", doctorVoice);
 			commandStart = true;
 			//医生出现
 			//窗户打开

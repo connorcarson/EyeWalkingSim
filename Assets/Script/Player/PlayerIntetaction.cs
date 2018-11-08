@@ -23,7 +23,7 @@ public class PlayerIntetaction : MonoBehaviour
         switch (targetObject.tag)
         {
             case "Eye":
-                targetObject.GetComponent<EyeInteraction>().BeenClicked();
+                //targetObject.GetComponent<EyeInteraction>().BeenClicked();
                 break;
             case "EyeGame":
                 targetObject.GetComponent<EyeGameUnit>().BeenClicked();
