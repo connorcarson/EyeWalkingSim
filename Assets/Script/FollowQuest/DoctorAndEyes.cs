@@ -10,12 +10,13 @@ public class DoctorAndEyes : MonoBehaviour
 
 	public AudioSource doctorVoice;
 	public AudioClip doorKnock;
+	public GameObject doctor;
 	AudioSource myAud;
 	// Use this for initialization
 	void Start()
 	{
 		theText = GameObject.FindGameObjectWithTag("Text").GetComponent<Text>();
-		doctorVoice = GameObject.FindGameObjectWithTag("Doctor").GetComponent<AudioSource>();
+		doctorVoice = doctor.GetComponent<AudioSource>();
 	}
 
 	// Update is called once per frame
@@ -23,8 +24,8 @@ public class DoctorAndEyes : MonoBehaviour
 		if (FirstPartLevelManager.Instance.gameProcess == EGameProcess.DoctorPuzzelPROCEED && commandStart==false)
 		{
 			//最开始的命令
-			GameObject.FindGameObjectWithTag("Doctor").SetActive(true);
-			GameObject.FindGameObjectWithTag("Doctor").GetComponent<DoctorAndEyes>().commandStart = false;
+			doctor.SetActive(true);
+			GameObject.FindGameObjectWithTag("GameController").GetComponent<DoctorAndEyes>().commandStart = false;
 			myAud = GetComponent<AudioSource>();
 			myAud.clip = doorKnock;
 			myAud.Play();
