@@ -104,4 +104,4 @@ Material:
     - _LightDir: {r: 1, g: 1, b: 0, a: 0}
     - _Movement: {r: 0.01, g: 0, b: -0.01, a: 0}
     - _ShallowColor: {r: 1, g: 1, b: 1, a: 1}
-    - _UVOffset: {r: 4.29143, g: 0, b: -4.29153, a: 0}
+    - _UVOffset: {r: 13.2903185, g: 0, b: -13.287577, a: 0}

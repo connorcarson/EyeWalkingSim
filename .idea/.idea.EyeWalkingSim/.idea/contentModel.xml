@@ -29,6 +29,9 @@
           <e p="computer-pixel-7" t="Include">
             <e p="README.txt" t="Include" />
           </e>
+          <e p="rasterized" t="Include">
+            <e p="READ-ME-license.txt" t="Include" />
+          </e>
         </e>
         <e p="HeightMapGeneratorPackage" t="Include">
           <e p="README.txt" t="Include" />
@@ -761,6 +764,7 @@
             <e p="PlayerEatPlanets.cs" t="Include" />
           </e>
           <e p="ConnorScripts" t="Include">
+            <e p="Fade.cs" t="Include" />
             <e p="LoadSceneScript.cs" t="Include" />
           </e>
           <e p="EyeGameAndCoridor" t="Include">
