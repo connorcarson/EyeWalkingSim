@@ -15,7 +15,7 @@ public class LoadSceneScript : MonoBehaviour
 	private bool Shift;
 	public GameObject obj;
 	private bool canFade;
-	private float timeToFade = 3.0f;
+	private float timeToFade = 0.5f;
 	private float tempColor;
 	
 	void Start()
@@ -30,15 +30,21 @@ public class LoadSceneScript : MonoBehaviour
 	{
 		if (canFade)
 		{
-			tempColor = Mathf.Lerp(obj.GetComponent<Image>().color.a, 0, timeToFade * Time.deltaTime);
+			//obj.GetComponent<Image>().color.a;
+			tempColor = Mathf.Lerp(obj.GetComponent<Image>().color.a, 1, timeToFade * Time.deltaTime);
 			obj.GetComponent<Image>().color= new Color(0,0,0,tempColor);
+			if (tempColor > 0.98)
+			{
+				canFade = false;
+				StartCoroutine(LoadYourAsyncScene());
+			}
 		}
 	}
 
 	public void TaskOnClick()
 	{
 		//Output this to console when Button1 or Button3 is clicked
-		StartCoroutine(DoFade());
+		//StartCoroutine(DoFade());
 		canFade = true;
 		Debug.Log("You have clicked the button!");
 	}
