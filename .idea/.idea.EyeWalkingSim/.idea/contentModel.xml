@@ -782,6 +782,7 @@
               <e p="EyeInteraction.cs" t="Include" />
               <e p="LightGoDownWithEyeClose.cs" t="Include" />
             </e>
+            <e p="WallDisappear.cs" t="Include" />
           </e>
           <e p="FollowQuest" t="Include">
             <e p="DoctorAndEyes.cs" t="Include" />
